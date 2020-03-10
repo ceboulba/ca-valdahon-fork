@@ -45,6 +45,15 @@ var createScene = function () {
     camera.attachControl(canvas, true);
     camera.inputs.attached.mousewheel.detachControl(canvas);
     var vrHelper = scene.createDefaultVRExperience();
+    scene.actionManager.registerAction(
+    new BABYLON.ExecuteCodeAction(
+        {
+            trigger: BABYLON.ActionManager.OnKeyUpTrigger,
+            parameter: 'r'
+        },
+        function () { console.log('r button was pressed'); }
+    )
+);
 
 
 
