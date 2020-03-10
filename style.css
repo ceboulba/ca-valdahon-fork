@@ -29,6 +29,10 @@ p.subtitle{
   display: none;
 }
 
+.unhide{
+  display:block;
+}
+
 .columns.milan{
   align-items: baseline;
 }

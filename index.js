@@ -55,9 +55,10 @@ var createScene = function () {
     );
 
     //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
-    if(num ===0 ) {
+    if(num <= 2 ) {
 canvas.classList.add('hide')
-
+}else {
+  canvas.classList.remove('hide')
 }
 
     return scene;
