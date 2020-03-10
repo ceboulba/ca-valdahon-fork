@@ -39,36 +39,25 @@ const btnNext = document.getElementById('btnNext').addEventListener('click', () 
 var engine = new BABYLON.Engine(canvas, true)
 
 var createScene = function () {
-  var scene = new BABYLON.Scene(engine)
-  var camera = new BABYLON.ArcRotateCamera(   
-    'Camera',
-   9,
-    Math.PI / 2,
-    2,
-    BABYLON.Vector3.Zero(),
-    scene
-  )
+    var scene = new BABYLON.Scene(engine);
+    var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2,  Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
+    camera.attachControl(canvas, true);
+    camera.inputs.attached.mousewheel.detachControl(canvas);
 
-  camera.attachControl(canvas, true)
-  camera.inputs.attached.mousewheel.detachControl(canvas)
-  //camera.lowerAlphaLimit = .85
-  //camera.upperAlphaLimit = 4.77
+    var dome = new BABYLON.PhotoDome(
+        "testdome",
+        imgs[num],
+        {
+            resolution: 32,
+            size: 1000
+        },
+        scene
+    );
 
-  let zoomLevel = 2
+    dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
 
-  var dome = new BABYLON.PhotoDome(
-    'testdome',
-    imgs[num],
-    {
-      resolution: 32,
-      size: 15,
-      useDirectMapping: false,
-    },
-    scene
-  )
-
-  return scene
-}
+    return scene;
+};
 
 const scene = createScene()
 
