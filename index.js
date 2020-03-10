@@ -44,6 +44,9 @@ var createScene = function () {
     var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2,  Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true);
     camera.inputs.attached.mousewheel.detachControl(canvas);
+    var vrHelper = scene.createDefaultVRExperience();
+
+
 
     var dome = new BABYLON.PhotoDome(
         "testdome",
@@ -55,7 +58,25 @@ var createScene = function () {
         scene
     );
 
-    dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
+    // From 2D view to fullscreen VR
+scene.actionManager.registerAction(
+new BABYLON.ExecuteCodeAction({
+        trigger: BABYLON.ActionManager.OnKeyDownTrigger,
+        parameter: 's' //press "s" key
+    },
+    function () { vrHelper.enterVR(); }
+));
+
+// From fullscreenVR to 2D view
+scene.actionManager.registerAction(
+new BABYLON.ExecuteCodeAction({
+        trigger: BABYLON.ActionManager.OnKeyDownTrigger,
+        parameter: 'e' //press "e" key
+    },
+    function () { vrHelper.exitVR(); document.exitFullscreen();}
+));
+
+    //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
 
     return scene;
 };
