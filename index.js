@@ -2,11 +2,11 @@
 import './style.css'
 import * as BABYLON from 'babylonjs'
 const canvas = document.getElementById('renderCanvas')
-//const imgAxo = document.querySelector('.img-axo')
+const imgAxo = document.querySelector('.img-axo')
 //const imgView = document.getElementById('img-view')
 //const viewType = document.querySelector('.view-type')
-const imageName = document.querySelector('.imageName')
-console.log(imageName.innerHTML)
+//const imageName = document.querySelector('.imageName')
+//console.log(imageName.innerHTML)
 
 const imgs = [
   'https://res.cloudinary.com/archipicture/image/upload/v1583261742/ca-valdahon/valdahon-axo-01.jpg',
@@ -55,11 +55,11 @@ var createScene = function () {
     );
 
     //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
-    if(num <= 2 ) {
-canvas.classList.add('hide')
-}else {
-  canvas.classList.remove('hide')
-}
+//     if(num <= 2 ) {
+// canvas.classList.add('hide')
+// }else {
+//   canvas.classList.remove('hide')
+// }
 
     return scene;
 };
