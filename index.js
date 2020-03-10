@@ -46,7 +46,7 @@ var createScene = function () {
 
     var dome = new BABYLON.PhotoDome(
         "testdome",
-        imgs[0],
+        imgs[2],
         {
             resolution: 32,
             size: 1000
