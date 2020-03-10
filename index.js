@@ -63,7 +63,7 @@ eesse
 
 
     //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
-var ctx = canvas.getContext('2d');
+//var ctx = canvas.getContext('2d');
 
 scene.actionManager = new BABYLON.ActionManager(scene);
 
