@@ -46,7 +46,7 @@ var createScene = function () {
 
     var dome = new BABYLON.PhotoDome(
         "testdome",
-        imgs[2],
+        imgs[num],
         {
             resolution: 32,
             size: 1000
@@ -54,7 +54,14 @@ var createScene = function () {
         scene
     );
 
-    dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
+    //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
+    if(num ===0 ) {
+      console.log('On est 0')
+var ctx = canvas.getContext('2d');
+
+ctx.fillStyle = 'green';
+ctx.fillRect(10, 10, 100, 100);    
+}
 
     return scene;
 };
