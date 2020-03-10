@@ -1,11 +1,11 @@
 'use strict'
 import './style.css'
 import * as BABYLON from 'babylonjs'
-//const canvas = document.getElementById('renderCanvas')
-const canvas = document.querySelector('canvas')
-//const imgBox = document.getElementById('img-box')
-//const imgView = document.getElementById('img-view')
-//const viewType = document.querySelector('.view-type')
+const canvas = document.getElementById('renderCanvas')
+const canvas = document.querySelector() getElementById('renderCanvas')
+const imgBox = document.getElementById('img-box')
+const imgView = document.getElementById('img-view')
+const viewType = document.querySelector('.view-type')
 const imageName = document.querySelector('.imageName')
 console.log(imageName.innerHTML)
 
@@ -42,13 +42,8 @@ var engine = new BABYLON.Engine(canvas, true)
 var createScene = function () {
     var scene = new BABYLON.Scene(engine);
     var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2,  Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
- var vrHelper = scene.createDefaultVRExperience();
-eesse
     camera.attachControl(canvas, true);
     camera.inputs.attached.mousewheel.detachControl(canvas);
-
-
-
 
     var dome = new BABYLON.PhotoDome(
         "testdome",
@@ -60,62 +55,38 @@ eesse
         scene
     );
 
-
-
-    //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
-//var ctx = canvas.getContext('2d');
-
-scene.actionManager = new BABYLON.ActionManager(scene);
-
-// From 2D view to fullscreen VR
-scene.actionManager.registerAction(
-new BABYLON.ExecuteCodeAction({
-        trigger: BABYLON.ActionManager.OnKeyDownTrigger,
-        parameter: 's' //press "s" key
-    },
-    function () { vrHelper.enterVR(); }
-));
-
-// From fullscreenVR to 2D view
-scene.actionManager.registerAction(
-new BABYLON.ExecuteCodeAction({
-        trigger: BABYLON.ActionManager.OnKeyDownTrigger,
-        parameter: 'e' //press "e" key
-    },
-    function () { vrHelper.exitVR(); document.exitFullscreen();}
-));
-
+    dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
 
     return scene;
 };
 
 const scene = createScene()
 
-// const check = () => {
-//   num <= 2 ?( () => {
-//     canvas.classList.add('hide');
-//     imgBox.classList.remove('hide');
-//     viewType.classList.add('hide')
-//   })()
-//     :( () => {
-//       canvas.classList.remove('hide')
-//       viewType.classList.remove('hide')
-//       imgBox.classList.add('hide')
-//     })()
-//   // scene.render()
-//   num <= 2 ? imgView.src = imgs[num] : null
-//   //num === 8 ? imgView.src = imgs[8] : null
-//   //num === 9 ? imgView.src = imgs[9] : null
-// }
+const check = () => {
+  num <= 2 ?( () => {
+    canvas.classList.add('hide');
+    imgBox.classList.remove('hide');
+    viewType.classList.add('hide')
+  })()
+    :( () => {
+      canvas.classList.remove('hide')
+      viewType.classList.remove('hide')
+      imgBox.classList.add('hide')
+    })()
+  // scene.render()
+  num <= 2 ? imgView.src = imgs[num] : null
+  //num === 8 ? imgView.src = imgs[8] : null
+  //num === 9 ? imgView.src = imgs[9] : null
+}
 
-// check()
+check()
 
 const next = () => {
   num < imgs.length - 1 ?
     num++
     : num = 0
   scene = createScene()
-  //check()
+  check()
 }
 
 const prev = () => {
@@ -124,7 +95,7 @@ const prev = () => {
     num = imgs.length - 1
     : num--
   scene = createScene()
-  //check()
+  check()
 }
 
 engine.runRenderLoop(function () {
