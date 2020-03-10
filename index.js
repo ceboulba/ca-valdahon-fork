@@ -2,7 +2,6 @@
 import './style.css'
 import * as BABYLON from 'babylonjs'
 const canvas = document.getElementById('renderCanvas')
-const canvas = document.querySelector() getElementById('renderCanvas')
 const imgBox = document.getElementById('img-box')
 const imgView = document.getElementById('img-view')
 const viewType = document.querySelector('.view-type')
@@ -47,7 +46,7 @@ var createScene = function () {
 
     var dome = new BABYLON.PhotoDome(
         "testdome",
-        imgs[num],
+        imgs[0],
         {
             resolution: 32,
             size: 1000
