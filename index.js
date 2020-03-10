@@ -56,11 +56,8 @@ var createScene = function () {
 
     //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
     if(num ===0 ) {
-      console.log('On est 0')
-var ctx = canvas.getContext('2d');
+canvas.classList.add('hide')
 
-ctx.fillStyle = 'green';
-ctx.fillRect(10, 10, 100, 100);    
 }
 
     return scene;
