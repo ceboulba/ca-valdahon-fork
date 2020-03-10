@@ -2,7 +2,7 @@
 import './style.css'
 import * as BABYLON from 'babylonjs'
 const canvas = document.getElementById('renderCanvas')
-//const imgAxo = document.getElementById('img-box')
+const imgAxo = document.querySelector('.img-axo')
 //const imgView = document.getElementById('img-view')
 //const viewType = document.querySelector('.view-type')
 const imageName = document.querySelector('.imageName')
