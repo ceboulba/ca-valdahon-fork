@@ -66,24 +66,24 @@ canvas.classList.add('hide')
 
 const scene = createScene()
 
-const check = () => {
-  num <= 2 ?( () => {
-    canvas.classList.add('hide');
-    imgBox.classList.remove('hide');
-    viewType.classList.add('hide')
-  })()
-    :( () => {
-      canvas.classList.remove('hide')
-      viewType.classList.remove('hide')
-      imgBox.classList.add('hide')
-    })()
-  // scene.render()
-  num <= 2 ? imgView.src = imgs[num] : null
-  //num === 8 ? imgView.src = imgs[8] : null
-  //num === 9 ? imgView.src = imgs[9] : null
-}
+// const check = () => {
+//   num <= 2 ?( () => {
+//     canvas.classList.add('hide');
+//     imgBox.classList.remove('hide');
+//     viewType.classList.add('hide')
+//   })()
+//     :( () => {
+//       canvas.classList.remove('hide')
+//       viewType.classList.remove('hide')
+//       imgBox.classList.add('hide')
+//     })()
+//   // scene.render()
+//   num <= 2 ? imgView.src = imgs[num] : null
+//   //num === 8 ? imgView.src = imgs[8] : null
+//   //num === 9 ? imgView.src = imgs[9] : null
+// }
 
-//check()
+// //check()
 
 const next = () => {
   num < imgs.length - 1 ?
