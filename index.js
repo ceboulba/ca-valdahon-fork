@@ -1,7 +1,8 @@
 'use strict'
 import './style.css'
 import * as BABYLON from 'babylonjs'
-const canvas = document.getElementById('renderCanvas')
+//const canvas = document.getElementById('renderCanvas')
+const canvas = document.querySelector('canvas')
 const imgBox = document.getElementById('img-box')
 const imgView = document.getElementById('img-view')
 const viewType = document.querySelector('.view-type')
