@@ -42,6 +42,7 @@ var engine = new BABYLON.Engine(canvas, true)
 var createScene = function () {
     var scene = new BABYLON.Scene(engine);
     var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2,  Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
+
     camera.attachControl(canvas, true);
     camera.inputs.attached.mousewheel.detachControl(canvas);
 
@@ -61,6 +62,7 @@ var createScene = function () {
 
 
     //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
+
 
     return scene;
 };
