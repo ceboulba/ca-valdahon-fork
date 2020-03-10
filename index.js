@@ -5,7 +5,7 @@ const canvas = document.getElementById('renderCanvas')
 const imgAxo = document.querySelector('.img-axo')
 //const imgView = document.getElementById('img-view')
 //const viewType = document.querySelector('.view-type')
-//const imageName = document.querySelector('.imageName')
+const imageName = document.querySelector('.imageName')
 //console.log(imageName.innerHTML)
 
 const imgs = [
