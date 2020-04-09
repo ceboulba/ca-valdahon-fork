@@ -1,6 +1,6 @@
 'use strict'
 import './style.css'
-import * as BABYLON from 'babylonjs'
+import * as BABYLON from 'https://preview.babylonjs.com/babylon.js'
 const canvas = document.getElementById('renderCanvas')
 const imgAxo = document.querySelector('.img-axo')
 //const imgView = document.getElementById('img-view')
@@ -30,6 +30,9 @@ const imgName= [
   'Circulation étage',
   'Espace collaborateurs étage',
 ]
+//GUI
+    //var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+
 
 let num = 0
 
