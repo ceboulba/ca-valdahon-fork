@@ -71,7 +71,7 @@ var createScene = function() {
 
 const advTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI")
 
-var button = GUI.Button.CreateImageButton(
+const button = GUI.Button.CreateImageButton(
   "but",
   "Click Me",
 );
