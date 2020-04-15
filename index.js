@@ -31,8 +31,9 @@ const imgName = [
   "Circulation étage",
   "Espace collaborateurs étage"
 ];
+
 //GUI
-var advancedTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+//var advancedTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
 let num = 0;
 
@@ -67,6 +68,13 @@ var createScene = function() {
     },
     scene
   );
+
+const advTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI")
+
+var button = GUI.Button.CreateImageButton(
+  "but",
+  "Click Me",
+);
 
   //dome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
   //     if(num <= 2 ) {
